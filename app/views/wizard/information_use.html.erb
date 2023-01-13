@@ -1,0 +1,11 @@
+<% title(t('.page_title')) %>
+<%= render partial: 'back_link' %>
+
+<h1 class="govuk-heading-l"><%= t(".page_title") %></h1>
+      
+<%= t(".body_html") %>
+
+<%= form_for @submission, url: wizard_information_use_submit_path, method: :post do |f| %>
+    <%= f.hidden_field :status, :value => :information_use %>
+    <%= f.govuk_submit "Confirm and send" %>
+<% end %>

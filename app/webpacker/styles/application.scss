@@ -1,0 +1,24 @@
+@function frontend-font-url($filename) {
+  @return url("~assets/fonts/" + $filename);
+}
+
+@function frontend-image-url($filename) {
+  @return url("~assets/images/" + $filename);
+}
+
+$govuk-font-url-function: frontend-font-url;
+$govuk-image-url-function: frontend-image-url;
+
+@import "~govuk-frontend/govuk/all";
+
+@media only screen and (max-width: 520px) {
+  .hide-col {
+    display: none;
+  }
+
+  // Accessibility change to confirmation panel
+  .app-confirmation-panel {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

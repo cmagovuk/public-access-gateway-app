@@ -1,0 +1,197 @@
+<style>
+@media print {
+    H1 {font-size:1.5em !important;padding:0px;margin:0px;}
+    H2 {font-size:1.2em !important;padding:0px;margin:0px;}
+    H3 {font-size:1em !important;padding:0px;margin:0px;}
+    P {font-size:0.9em !important;padding:0px;margin:0px;}
+    #guidance {display:none !important;}
+    dt {font-size:0.9em !important;padding:0px;margin:0px;}
+    dd {font-size:0.9em !important;padding:0px;margin:0px;}
+    .govuk-phase-banner {display:none;padding:0px;margin:0px;}
+    .govuk-header {display:none;}
+    .govuk-footer {display:none;padding:0px;margin:0px;}
+    .govuk-!-margin-bottom-9 {margin-bottom:3 !important;}
+    @page {margin:1.5cm;}
+}
+</style>
+
+<% title(t('.page_title')) %>
+
+<h1 class="govuk-heading-xl"><%= t(".submission") %> <%= @submission.referencenumber %></h2>
+
+
+<h2 class="govuk-heading-l"><%= t('.submission') %></h2>
+
+<% if Router.Contains(@submission.classification.to_sym,:classify) %>
+<div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.classification') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= t(".classification_options." + @submission.classification.downcase.to_s) %>
+            </dd>
+        </div>
+    </dl>
+</div>
+<% end %>
+
+<% if Router.Contains(@submission.classification.to_sym,:related_reference_number) %>
+<div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.related_reference_number') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= @submission.relatedreferencenumber %>
+            </dd>
+        </div>
+    </dl>
+</div>
+<% end %>
+
+<% if Router.Contains(@submission.classification.to_sym,:related_investigation) %>
+<div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.related_investigation') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= @submission.relatedinvestigation %>
+            </dd>
+        </div>
+    </dl>
+</div>
+<% end %>
+
+<% if Router.Contains(@submission.classification.to_sym,:businesses) && !@submission.businesses.blank? %>
+<div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.businesses') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% @submission.businesses.each do |business| %>    
+                    <%= business.name %>
+                    <%= !business.street.blank?     ? raw("<br />") + business.street : nil %>
+                    <%= !business.townorcity.blank? ? raw("<br />") + business.townorcity : nil %>
+                    <%= !business.county.blank?     ? raw("<br />") + business.county : nil %>
+                    <%= !business.postcode.blank?   ? raw("<br />") + business.postcode : nil %>
+                    <%= !business.url.blank?        ? raw("<br />") + business.url : nil %>
+                    <%= raw("<br />") %>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+</div>
+<% end %>
+
+
+<% if Router.Contains(@submission.classification.to_sym,:what_happened) %>
+<div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.what_happened') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= simple_format(@submission.description) %>
+            </dd>
+        </div>
+    </dl>
+</div>
+<% end %>
+
+
+<% if Router.Contains(@submission.classification.to_sym,:nation) %>
+<div>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.nation') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= t(".nation_options." + @submission.nation.to_s) %><br />
+            </dd>
+        </div>
+    </dl>
+</div>
+<% end %>
+
+
+<% if Router.Contains(@submission.classification.to_sym,:evidence) %>
+<div>
+    <h2 class="govuk-heading-l"><%= t('.evidence') %></h2>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">&nbsp;</dt>
+            <dd class="govuk-summary-list__value">
+                <% if !@submission.evidencefiles.blank? %>
+                    <% @submission.evidencefiles.each do |evidence_file| %>
+                        <%= evidence_file.filename %><br />
+                    <% end %>
+                <% else %>
+                    <%= t(".no_evidence_files") %>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+</div>
+<% end %>
+
+
+<% if Router.Contains(@submission.classification.to_sym,:contact) %>
+    
+<h2 class="govuk-heading-l"><%= t('.contact') %></h2>
+<div>
+    <% if @submission.contactfirstname.blank? \
+    and @submission.contactlastname.blank? \
+    and @submission.contacttelephone.blank? \
+    and @submission.contactemail.blank? %>
+    
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">&nbsp;</dt>
+                <dd class="govuk-summary-list__value"><%= t('.no_contact_info') %></dd>
+            </div>
+        </dl>
+    <% end %>
+
+    <% if !@submission.contactfirstname.blank? %>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key"><%= t('.contact_first_name') %></dt>
+                <dd class="govuk-summary-list__value">
+                    <%= @submission.contactfirstname %>
+                </dd>
+            </div>
+        </dl>
+    <% end %>
+
+    <% if !@submission.contactlastname.blank? %>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key"><%= t('.contact_last_name') %></dt>
+                <dd class="govuk-summary-list__value">
+                    <%= @submission.contactlastname %>
+                </dd>
+            </div>
+        </dl>
+    <% end %>
+
+    <% if !@submission.contactemail.blank? %>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key"><%= t('.contact_email') %></dt>
+                <dd class="govuk-summary-list__value">
+                    <%= @submission.contactemail %>
+                </dd>
+            </div>
+        </dl>
+    <% end %>
+
+    <% if !@submission.contacttelephone.blank? %>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key"><%= t('.contact_telephone') %></dt>
+                <dd class="govuk-summary-list__value">
+                    <%= @submission.contacttelephone %>
+                </dd>
+            </div>
+        </dl>
+    <% end %>
+</div>
+<% end %>
+

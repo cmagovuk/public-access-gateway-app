@@ -1,0 +1,34 @@
+<% title(t('.page_title')) %>
+
+<div class="govuk-panel govuk-panel--confirmation">
+    <h1 class="govuk-panel__title">
+        <%= t(".page_title") %>
+    </h1>
+
+    <div class="govuk-panel__body">
+        <%= t(".your_reference_number") %>
+        <br>
+        <strong>
+        
+        <% if !@submission.relatedreferencenumber.blank? %>
+            <%= @submission.relatedreferencenumber %>
+        <% else %>
+            <%= @submission.referencenumber %>
+        <% end %>
+
+        </strong>
+    </div>
+
+</div>
+
+<% if @submission.contactemail.present? %>
+    <%= t(".email_notification_html") %>
+<% end %>
+
+
+<%= t(".body_html",service_review_url: @service_review_url) %>
+    
+
+<%= form_for @submission, url: wizard_print_path, method: :get, html: { target: "_blank" } do |f| %>
+    <%= f.govuk_submit t('.save_button') %>
+<% end %>

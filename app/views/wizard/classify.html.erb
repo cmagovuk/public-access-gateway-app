@@ -1,0 +1,16 @@
+<% title(t('.page_title')) %>
+
+
+
+<%= form_for @submission, :url => wizard_classify_submit_path, :method => :post  do |f| %>
+
+  <%= f.govuk_error_summary %>
+
+  <%= f.hidden_field :status, :value => :classify %>
+
+  <%= f.govuk_collection_radio_buttons :classification, Submission::CLASSIFY_OPTIONS, ->(option) {option}, nil, legend: {size: 'l', tag: 'h1'} %>
+
+  <%= f.govuk_submit %>
+
+<% end %>
+

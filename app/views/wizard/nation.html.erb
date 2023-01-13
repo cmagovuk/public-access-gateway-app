@@ -1,0 +1,15 @@
+<% title(t('.page_title')) %>
+
+<%= render partial: 'back_link' %>
+
+<%= form_for @submission, :url => wizard_nation_submit_path, :method => :post  do |f| %>    
+
+  <%= f.hidden_field :status, :value => :nation %>
+
+  <%= f.govuk_error_summary %>
+
+  <%= f.govuk_collection_radio_buttons :nation, Submission::NATION_OPTIONS, ->(option) {option}, nil, legend: { text: t('.page_title'), size:"l" } %>
+
+  <%= f.govuk_submit %>
+      
+<% end %>

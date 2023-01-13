@@ -1,0 +1,237 @@
+<% title(t('.page_title')) %>
+
+<h1 class="govuk-heading-xl"><%= t(".review") %></h1>
+
+<h2 class="govuk-heading-l"><%= t(".submission") %></h2>
+
+<% if Router.Contains(@submission.classification.to_sym,:classify) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.classification') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= t(".classification_options." + @submission.classification.downcase.to_s) %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_classify_path, class: 'govuk-link', title: "Change #{t('.classification').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.classification').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+<% if Router.Contains(@submission.classification.to_sym,:related_reference_number) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.related_reference_number') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= @submission.relatedreferencenumber %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_related_reference_number_path, class: 'govuk-link', title: "Change #{t('.classification').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.classification').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+<% if Router.Contains(@submission.classification.to_sym,:related_investigation) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.related_investigation') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= @submission.relatedinvestigation %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_related_investigation_path, class: 'govuk-link', title: "Change #{t('.classification').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.classification').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+<% if Router.Contains(@submission.classification.to_sym,:businesses) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.businesses') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% @submission.businesses.each do |business| %>    
+                    <%= business.name %>
+                    <%= !business.street.blank?     ? raw("<br />") + business.street : nil %>
+                    <%= !business.townorcity.blank? ? raw("<br />") + business.townorcity : nil %>
+                    <%= !business.county.blank?     ? raw("<br />") + business.county : nil %>
+                    <%= !business.postcode.blank?   ? raw("<br />") + business.postcode : nil %>
+                    <%= !business.url.blank?        ? raw("<br />") + business.url : nil %>
+                    <%= raw("<br />") %>
+                <% end %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_businesses_path, class: 'govuk-link', title: "Change #{t('.businesses').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.businesses').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+
+<% if Router.Contains(@submission.classification.to_sym,:what_happened) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.what_happened') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= simple_format(@submission.description) %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_what_happened_path, class: 'govuk-link', title: "Change #{t('.what_happened').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.what_happened').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+
+<% if Router.Contains(@submission.classification.to_sym,:nation) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.nation') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= t(".nation_options." + @submission.nation.to_s) %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_nation_path, class: 'govuk-link', title: "Change #{t('.nation').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.nation').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+
+<% if Router.Contains(@submission.classification.to_sym,:evidence) %>
+    
+    <h2 class="govuk-heading-l"><%= t('.evidence') %></h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">&nbsp;</dt>
+            <dd class="govuk-summary-list__value">
+                <% if !@submission.evidencefiles.blank? %>
+                    <% @submission.evidencefiles.each do |evidence_file| %>
+                        <%= evidence_file.filename %><br />
+                    <% end %>
+                <% else %>
+                    <%= t(".no_evidence_files") %>
+                <% end %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_evidence_path, class: 'govuk-link', title: "Change #{t('.evidence').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.evidence').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+
+<% if Router.Contains(@submission.classification.to_sym,:contact) %>
+    
+    <h2 class="govuk-heading-l"><%= t('.contact') %></h2>
+    
+    <% if @submission.contactemail.blank? %>
+        <p class="govuk-body"><%= t('.no_email_address') %></p>
+    <% end %>
+    
+    <% if @submission.contactfirstname.blank? \
+    and @submission.contactlastname.blank? \
+    and @submission.contacttelephone.blank? \
+    and @submission.contactemail.blank? %>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">&nbsp;</dt>
+                <dd class="govuk-summary-list__value">
+                    <%= t('.no_contact_info') %>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                        Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+                    <% end %>
+                </dd>
+            </div>
+        </dl>
+    <% end %>
+
+    <% if !@submission.contactfirstname.blank? %>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key"><%= t('.contact_first_name') %></dt>
+                <dd class="govuk-summary-list__value">
+                    <%= @submission.contactfirstname %>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                        Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+                    <% end %>
+                </dd>
+            </div>
+        </dl>
+    <% end %>
+
+    <% if !@submission.contactlastname.blank? %>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key"><%= t('.contact_last_name') %></dt>
+                <dd class="govuk-summary-list__value">
+                    <%= @submission.contactlastname %>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                        Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+                    <% end %>
+                </dd>
+            </div>
+        </dl>
+    <% end %>
+
+    <% if !@submission.contactemail.blank? %>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key"><%= t('.contact_email') %></dt>
+                <dd class="govuk-summary-list__value">
+                    <%= @submission.contactemail %>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                        Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+                    <% end %>
+                </dd>
+            </div>
+        </dl>
+    <% end %>
+
+    <% if !@submission.contacttelephone.blank? %>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key"><%= t('.contact_telephone') %></dt>
+                <dd class="govuk-summary-list__value">
+                    <%= @submission.contacttelephone %>
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                    <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                        Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+                    <% end %>
+                </dd>
+            </div>
+        </dl>
+    <% end %>
+
+<% end %>
+
+<%= form_for @submission, url: wizard_review_submit_path, method: :post do |f| %>
+    <%= f.hidden_field :status, :value => :review %>
+    <%= f.govuk_error_summary %>
+    <%= f.govuk_submit %>
+<% end %>

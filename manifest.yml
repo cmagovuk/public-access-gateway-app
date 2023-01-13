@@ -1,0 +1,6 @@
+---
+applications:
+- name: govuk-cma-public-gateway"
+  buildpacks:
+    - https://github.com/cloudfoundry/ruby-buildpack.git
+    - https://github.com/cloudfoundry/nodejs-buildpack

@@ -1,0 +1,55 @@
+en:
+  errors:
+    contact_details:
+      blank_email_and_phone: Enter your email address or telephone number
+      telephone_number: 
+    attributes:
+      classification:
+        blank: You must choose an option.
+      name:
+        blank: Enter an organisation name
+        too_long: Organisation name must be %{count} characters or fewer
+      street:
+        too_long: Street must be %{count} characters or fewer
+      townorcity:
+        too_long: Town or City must be %{count} characters or fewer
+      county:
+        too_long: County must be %{count} characters or fewer
+      postcode:
+        too_long: Postcode must be %{count} characters or fewer
+      url:
+        too_long: Web Address must be %{count} characters or fewer
+      nation:
+        blank: At least one option must be chosen
+      businesses:
+        blank: Add at least one business
+      description:
+        blank: Description cannot be blank
+        too_long: Must be %{count} characters or fewer
+      relatedinvestigation:
+        blank: Name of CMA Investigation cannot be blank
+        too_short: What?
+        too_long: Must be %{count} characters or fewer
+      relatedreferencenumber:
+        format: The related reference number is expected to be prefixed with CMA or CMAE, followed by integers.
+      contactfirstname:
+        too_long: First name must be %{count} characters or fewer
+        invalid: First name must contain only alpha numeric characters, spaces, hyphens or apostrophes.
+      contactlastname:
+        too_long: Last name must be %{count} characters or fewer
+        invalid: Last name must contain only alpha numeric characters, spaces, hyphens or apostrophes.
+      contactemail:
+        blank: Enter your email address or telephone number
+        too_long: Email must be %{count} characters or fewer
+        invalid: Enter an email address in the correct format, like name@example.com
+      contacttelephone:
+        blank: Enter your telephone number
+        too_long: Telephone must be %{count} characters or fewer
+        invalid: Enter a telephone number, like 01632 960 001, 07700 900 982 or +44 0808 157 0192
+    upload:
+      file_size_error_message: "%{filename} must be smaller than %{size_limit}"
+      too_many_files_error_message: "You are limited to %{file_uploads} supporting documents"
+      file_type_error_message: "The selected file must be a DOC, DOCX, XLS, XLSX, PPT, PPTX, PDF, JPG, PNG, MP4, MOV or WMV"
+      file_unique_error_message: "The selected filename has already been added"
+      empty_file_error_message: The selected file is empty
+      no_file_error_message: Select a file to upload

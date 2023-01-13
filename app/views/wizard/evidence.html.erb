@@ -1,0 +1,47 @@
+<% title(t('.page_title')) %>
+<%= render partial: 'back_link' %>
+
+<%= form_for @submission, url: wizard_evidence_upload_path do |f| %>
+
+    <%= f.govuk_error_summary %>
+
+    <%= f.govuk_file_field :evidencefiles,
+        accept: ".txt, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .pdf, image/jpg, image/png, .mp4, .mov, .wmv",
+        multiple:false,
+        enctype: "multipart/form-data",
+        class: "upload-input",
+        label: {text: t('.page_title'), size: 'l' },
+        hint:  {text: t('.hint_html') }
+        %>
+
+    <%= f.govuk_submit t('.upload_file'), secondary:true, classes: "upload-files-button"%>
+        
+<% end %>
+
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header"><%= t('.filename') %></th>
+                <th class="govuk-table__header"><%= t('.filesize') %></th>
+                <th class="govuk-table__header"><%= t('.action') %></th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <% if @submission.evidencefiles.length > 0 %>
+                <% @submission.evidencefiles.each do |evidence_file| %>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><%= evidence_file.filename %></td>
+                    <td class="govuk-table__cell"><%= number_to_human_size(evidence_file.byte_size) %></td>
+                    <td class="govuk-table__cell"><a href="<%= wizard_evidence_remove_path %>?evidence_id=<%= evidence_file.id %>"><%= t('.remove') %></a></td>
+                </tr>
+                <% end %>
+            <% else %>
+                <tr><td class="govuk-table__cell" colspan="3"><%= t('.no_files') %></td></tr>
+            <% end %>
+        </tbody>
+    </table>
+
+<%= form_for @submission, url: wizard_evidence_submit_path, method: :post do |f| %>
+    <%= f.hidden_field :status, :value => :evidence %>
+    <%= f.govuk_submit classes: "upload-continue-button" %>
+<% end %>

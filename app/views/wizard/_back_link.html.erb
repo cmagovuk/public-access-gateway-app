@@ -1,0 +1,14 @@
+<% content_for(:back_link) do%>
+
+    <%
+    if session[:review_reached].nil?
+        previous_step = Router.Previous(@submission.classification.to_sym, @submission.status.to_sym)
+    else
+        previous_step = :review
+    end
+    %>
+
+    
+    <%= link_to t("link.back"), wizard_path + "/" + previous_step.to_s, class: 'govuk-back-link ga-pageLink' %>
+
+<% end %>

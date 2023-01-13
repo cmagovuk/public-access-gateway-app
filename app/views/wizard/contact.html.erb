@@ -1,0 +1,23 @@
+<% title(t('.page_title')) %>
+<%= render partial: 'back_link' %>
+
+<%= form_for @submission, url: wizard_contact_submit_path, method: :post do |f| %>
+
+    <%= f.govuk_fieldset legend: { text: t('.page_title'),size: "l" } do %>
+    
+        <%= f.hidden_field :status, :value => :contact %>
+
+        <%= t('.body_html') %>
+
+        <%= f.govuk_error_summary %>
+
+        <%= f.govuk_text_field :contactfirstname, label: { text: t('.first_name') } %>
+        <%= f.govuk_text_field :contactlastname, label: { text: t('.last_name') } %>
+        <%= f.govuk_email_field :contactemail, label: { text: t('.email_address') } %>
+        <%= f.govuk_phone_field :contacttelephone, label: { text: t('.telephone_number') } %>
+
+    <% end %>
+
+    <%= f.govuk_submit %>
+    
+<% end %>
