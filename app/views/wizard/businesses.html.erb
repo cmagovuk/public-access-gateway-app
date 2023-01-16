@@ -23,15 +23,15 @@
     <% @businesses.each do |business| %>
     <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header"><%= business.name %></th>
-        <td class="govuk-table__cell"><%= [business.street,business.townorcity,business.county,business.postcode].flatten.compact.join(" ") %></td>
-        <td class="govuk-table__cell"><a href="./business/edit/?business_id=<%= business.id %>"><%= t('.change') %></a>&nbsp;&nbsp;<a href="./business/remove/?business_id=<%= business.id %>"><%= t('.remove') %></a></td>
+        <td class="govuk-table__cell"><%= [business.street,business.townorcity,business.county,business.postcode].flatten.compact_blank.join(", ") %></td>
+        <td class="govuk-table__cell"><a href="./business/edit/?business_id=<%= business.id %>"><%= t('.change') %></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="./business/remove/?business_id=<%= business.id %>"><%= t('.remove') %></a></td>
     </tr>
     <% end %>
 </tbody>
 </table>
 
 <%= form_for @submission, url: wizard_business_add_path, method: :get do |f| %>
-    <%= f.govuk_submit t(".add_business") %>
+    <%= f.govuk_submit t(".add_business"), secondary: true %>
 <% end %>
 
 <%= form_for @submission, url: wizard_businesses_submit_path, method: :post do |f| %>

@@ -5,6 +5,8 @@
 
     <%= f.hidden_field :status, :value => :what_happened %>
 
+    <%= f.govuk_error_summary %>
+    
     <%= f.govuk_text_area :description, label: { text: t('.page_title'), size:"l" }, max_chars: 3500, hint: {text: t('.hint_html') }, rows:10 %>
     
     <%= f.govuk_submit %>

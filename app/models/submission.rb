@@ -30,7 +30,7 @@ class Submission < ApplicationRecord
 
     def validate_relatedreferencenumber
       if status.to_sym == :related_reference_number
-        if !relatedreferencenumber.match(/\A(CMA|CMAE)[0-9\-]+\z/)
+        if !relatedreferencenumber.match(/\A(CMA|CMAE)[0-9\-]+\z/) and !relatedreferencenumber.blank?
           errors.add(:relatedreferencenumber,:format)
         end
       end

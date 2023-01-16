@@ -19,6 +19,7 @@
 
 <h1 class="govuk-heading-xl"><%= t(".submission") %> <%= @submission.referencenumber %></h2>
 
+<%= t(".body_html") %>
 
 <h2 class="govuk-heading-l"><%= t('.submission') %></h2>
 
@@ -123,7 +124,7 @@
                         <%= evidence_file.filename %><br />
                     <% end %>
                 <% else %>
-                    <%= t(".no_evidence_files") %>
+                    <%= t(".no_evidence_uploaded") %>
                 <% end %>
             </dd>
         </div>
@@ -133,65 +134,73 @@
 
 
 <% if Router.Contains(@submission.classification.to_sym,:contact) %>
-    
+
 <h2 class="govuk-heading-l"><%= t('.contact') %></h2>
 <div>
-    <% if @submission.contactfirstname.blank? \
-    and @submission.contactlastname.blank? \
-    and @submission.contacttelephone.blank? \
-    and @submission.contactemail.blank? %>
-    
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">&nbsp;</dt>
-                <dd class="govuk-summary-list__value"><%= t('.no_contact_info') %></dd>
-            </div>
-        </dl>
-    <% end %>
 
-    <% if !@submission.contactfirstname.blank? %>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key"><%= t('.contact_first_name') %></dt>
-                <dd class="govuk-summary-list__value">
-                    <%= @submission.contactfirstname %>
-                </dd>
-            </div>
-        </dl>
-    <% end %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t('.contact_first_name') %></dt>
+        <dd class="govuk-summary-list__value">
+            <% if (!@submission.contactfirstname.blank?) %>
+                <%= @submission.contactfirstname %>
+            <% else %>
+                <%= t(".not_provided") %>
+            <% end %>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+            <% end %>
+        </dd>
+    </div>
+    </dl>
 
-    <% if !@submission.contactlastname.blank? %>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key"><%= t('.contact_last_name') %></dt>
-                <dd class="govuk-summary-list__value">
-                    <%= @submission.contactlastname %>
-                </dd>
-            </div>
-        </dl>
-    <% end %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t('.contact_last_name') %></dt>
+        <dd class="govuk-summary-list__value">
+            <% if (!@submission.contactlastname.blank?) %>
+                <%= @submission.contactlastname %>
+            <% else %>
+                <%= t(".not_provided") %>
+            <% end %>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+            <% end %>
+        </dd>
+    </div>
+    </dl>
 
-    <% if !@submission.contactemail.blank? %>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key"><%= t('.contact_email') %></dt>
-                <dd class="govuk-summary-list__value">
-                    <%= @submission.contactemail %>
-                </dd>
-            </div>
-        </dl>
-    <% end %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t('.contact_email') %></dt>
+        <dd class="govuk-summary-list__value">
+            <% if (!@submission.contactemail.blank?) %>
+                <%= @submission.contactemail %>
+            <% else %>
+                <%= t(".not_provided") %>
+            <% end %>
+        </dd>
+    </div>
+    </dl>
 
-    <% if !@submission.contacttelephone.blank? %>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key"><%= t('.contact_telephone') %></dt>
-                <dd class="govuk-summary-list__value">
-                    <%= @submission.contacttelephone %>
-                </dd>
-            </div>
-        </dl>
-    <% end %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t('.contact_telephone') %></dt>
+        <dd class="govuk-summary-list__value">
+            <% if (!@submission.contacttelephone.blank?) %>
+                <%= @submission.contacttelephone %>
+            <% else %>
+                <%= t(".not_provided") %>
+            <% end %>
+        </dd>
+    </div>
+    </dl>
+
 </div>
+
 <% end %>
 

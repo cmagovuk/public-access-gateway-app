@@ -3,13 +3,16 @@
 
 <h1 class="govuk-heading-l"><%= t('.page_title') %></h1>
 
+<%= t(".body_html") %>
+
+<%= f.govuk_error_summary %>
+
 <%= form_for @submission, url: wizard_related_reference_number_submit_path, :method => :post do |f| %>
 
     <%= f.hidden_field :status, :value => :related_reference_number %>
 
     <%= f.govuk_text_field :relatedreferencenumber,
-    label: { text: t('.caption') },
-    hint:  { text: t('.hint_html') }
+    label: { text: t('.caption') }
     %>
 
     <%= f.govuk_submit %>

@@ -31,7 +31,7 @@
 
 en:
   service: 
-    name: "CMA Public Gateway"
+    name: "Report an issue to the CMA"
   link:
     back: Back
   feedback:
@@ -52,21 +52,21 @@ en:
         <h1 class="govuk-heading-xl">
         Contact the Competition and Markets Authority
         </h1>
-        <p class="govuk-body">Use this service to tell the <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about">Competition and Markets Authority (CMA)</a> about issues with a business, inquire about an investigation or provide information and evidence.</p>
+        <p class="govuk-body">Use this service to tell the Competition and Markets Authority (CMA) about issues with a business, enquire about an investigation or provide information and evidence.</p>
         <p class="govuk-body">Do not use this service if you&rsquo;re seeking immediate advice and support. <a href="https://www.gov.uk/consumer-advice">Contact the relevant consumer advice organisation in your area</a>.</p>
         <p class="govuk-body">The information you provide will help the CMA to prioritise its action against possible breaches of competition or consumer law.</p>
         <h2 class="govuk-heading-m">Information you will need to provide</h2>
         <p class="govuk-body">You will be asked to provide:</h2>
         <ul class="govuk-list govuk-list--bullet">
-        <li>A description of the issue, including its impact</li>
-        <li>Any supporting evidence you have</li>
-        <li>Details about yourself and, if applicable, your organisation</li>
+        <li>a description of the issue, including its impact</li>
+        <li>any supporting evidence you have</li>
+        <li>details about yourself and, if applicable, your organisation</li>
         </ul>
         <h2 class="govuk-heading-m">Before you start</h2>
         <p class="govuk-body">The information you share with us will be used by the CMA and other organisations, to monitor and possibly take action to stop unfair business behaviour.</p>
         <p class="govuk-body">As part of your report, you can choose to provide contact details to the CMA.</p>
         <p class="govuk-body">If you provide these details, the CMA will be processing your personal data. 'Personal data' is information which relates to an individual who can be identified from it.</p>
-        <p class="govuk-body">We take all reports seriously. If you wish to make your report anonymously it will be handled in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">our personal information charter</a> (also known as privacy notice).</p>
+        <p class="govuk-body">We take all reports seriously. If you wish to make your report anonymously it will be handled in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter</a> (also known as privacy notice).</p>
         <a href="./start_submit" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Start now
         <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
@@ -79,7 +79,7 @@ en:
     businesses:
       page_title: Tell us about the businesses involved
       body_html: |
-        <p class="govuk-body">You can add the details of multiple businesses related to your report by selecting &quot;Add Business&quot; below as many times as necessary.</p>
+        <p class="govuk-body">You can add as many businesses as you need to.</p>
       business_details: Business details
       name: Name
       address: Address
@@ -87,38 +87,40 @@ en:
       remove: Remove
       add_business: Add business
     business_add:
-      page_title: Tell us about the business involved
-      name: Organisation name
-      street: Street name (Optional)
-      town: Town or city (Optional)
-      county: County (Optional)
-      postcode: Postcode (Optional)
-      website: Website (Optional)
+      page_title: Business details
+      name: Business name
+      street: Street address (optional)
+      town: Town or city (optional)
+      county: County (optional)
+      postcode: Postcode (optional)
+      website: Website (optional)
+      submit_button: Add business
       errors:
         org_name_required: Organisation Name cannot be blank
     business_edit:
       page_title: Edit business details
-      name: Organisation Name
-      street: Street Name (Optional)
-      town: Town or City (Optional)
-      county: County (Optional)
-      postcode: Postcode (Optional)
-      website: Website (Optional)
+      name: Business name
+      street: Street address (optional)
+      town: Town or City (optional)
+      county: County (optional)
+      postcode: Postcode (optional)
+      website: Website (optional)
+      submit_button: Edit business
     what_happened:
       page_title: What happened?
       hint_html: |
         <p class="govuk-body">Tell us about anything suspicious you may have seen and how it happened.</p>
         <p class="govuk-body">For example, you can tell us how a business has used unfair terms in a contract, is setting prices unfairly, or is abusing their position in the market.</p>
-        <p class="govuk-body">You can include dates and other information that would help the CMA understand what you are reporting.</p>
+        <p class="govuk-body">You can include dates and other information that would help us understand what you are reporting.</p>
         <p class="govuk-body">Do not include personal or financial information like credit card details, medical history, or information about children or vulnerable people.</p>
-        <p class="govuk-body">You can upload further evidence in the next step.</p>
+        <p class="govuk-body">You can upload further evidence in a later step if you need to.</p>
     additional_information:
       page_title: Additional information
       hint_html: Do not include personal or financial information, like credit card details, medical history or information about children or vulnerable people. Use this space to tell us about what happened and how. You can include dates and other information that would help the CMA understand what you are reporting.
     evidence:
-      page_title: Supporting evidence
+      page_title: Upload supporting evidence
       hint_html: |
-        <p class="govuk-body">All evidence uploaded is carefully protected and handled in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter</a> (opens in new window).</p>
+        <p class="govuk-body">All evidence uploaded is carefully protected and handled in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter</a> (also known as privacy notice - opens in new tab).</p>
         <p class="govuk-body">You can upload up to 5 files, which can be up to 10MB each.</p>
         <p class="govuk-body">Most file types are supported (PDF, DOC, Excel, JPG, etc).</p>
         <p class="govuk-body">For example, you can upload:</p>
@@ -132,7 +134,7 @@ en:
           <li>any evidence that supports your submission</li>
         </ul>
         <p class="govuk-body">You do not need to submit evidence to report something to us.</p>
-      filename: Filename
+      filename: File name
       filesize: File size
       action: Action
       remove: Remove
@@ -141,28 +143,31 @@ en:
     nation:
       page_title: Where in the UK are you reporting from?
     related_reference_number:
-      page_title: Do you know the reference number of your previous form submission? 
-      hint_html: You can find your reference number on the email confirmation from your previous report. If you do not know your reference number, or do not have one, continue.
+      page_title: What is the refererence number of your previous report? 
+      body_html: |
+        <p class="govuk-body">You can find your reference number on the email confirmation from your previous report. If you do not know your reference number, or do not have one, continue.</p>
       caption: Reference number
     related_investigation:
       page_title: Which investigation are you telling us about? 
-      caption: Name of CMA Investigation
-      hint_html: You can find the latest information about the CMA's ongoing and closed cases on <a href="http://ds-cma-prototype.azurewebsites.net/cpg/cpg3c/case-finder">case finder</a>.
+      body_html: |
+        <p class="govuk-body">You can find the latest information about the CMA's ongoing and closed cases in the <a href="http://ds-cma-prototype.azurewebsites.net/cpg/cpg3c/case-finder" target="_blank">CMA case finder</a> (opens in a new tab).</p>
+      caption: Name of CMA investigation
+      hint_html: 
     contact:
       page_title: Your contact details
       body_html: |
         <p class="govuk-body">These questions are optional. We can only send email confirmation of the submission if you provide an email address.</p>
-        <p class="govuk-body">We take all reports seriously. If you wish to make your report anonymously it will be handled in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">our personal information charter</a> (also known as privacy notice).</p>
-        <p class="govuk-body">If you wish to remain anonymous, select continue.</p>
-      first_name: First name
-      last_name: Last name
-      email_address: Email address
-      telephone_number: Telephone number
+        <p class="govuk-body">We take all reports seriously. If you wish to make your report anonymously it will be handled in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter</a> (also known as privacy notice).</p>
+        <p class="govuk-body">If you wish to remain anonymous, select Continue.</p>
+      first_name: First name (optional)
+      last_name: Last name (optional)
+      email_address: Email address (optional)
+      telephone_number: Telephone number (optional)
     review:
-      page_title: Review
+      page_title: Check your answers
       classification: What are you reporting to the CMA?
-      businesses: Businesses involved
-      what_happened: What happened
+      businesses: Tell us about the businesses involved
+      what_happened: What happened?
       additional_information: Additional information
       nation: Where in the UK are you reporting from?
       nation_options:
@@ -172,7 +177,7 @@ en:
         wales: Wales
         unknown: I'm not sure
         notuk: I don't live in the UK
-      evidence: Evidence files
+      evidence: Upload supporting evidence
       no_evidence_uploaded: No evidence uploaded
       contact: Contact information
       no_contact_info: No contact information provided.
@@ -182,24 +187,25 @@ en:
       contact_email: Email address
       contact_telephone: Telephone number
       related_investigation: Which investigation are you telling us about?
-      related_reference_number: Do you know the reference number of your previous form submission? 
+      related_reference_number: What is the refererence number of your previous report?
       classification_options:
         business: A problem with a business
         sector: Issues in a sector of the UK economy
         cartels: Businesses agreeing not to compete with each other
         ongoing: Information or evidence related to an ongoing CMA investigation
         whistleblowing: Issues with a business I work or worked with (whistleblowing)
-        more: Something I've already told you about
+        more: An issue I've already submitted to you
         other: Something else
+      not_provided: Not provided
     information_use:
       page_title: More information on how your data will be used
       body_html: |
         <p class="govuk-body">We will only process (use or disclose) personal data where it is necessary, in order to exercise our statutory functions. For example, to contact you (if you have chosen to provide contact details) about your complaint, or to help us develop our understanding of potential issues arising in connection with the Coronavirus outbreak, or to inform competition or consumer enforcement action, should that be appropriate. Where necessary, we may share personal data with other law enforcement, consumer or regulatory bodies (nationally and internationally).</p>
-        <p class="govuk-body">When we process personal data, we follow data protection law, as set out in the General Data Protection Regulation 2016 (GDPR) and the Data Protection Act 2018, and other law designed to protect sensitive information. We will be the controller under data protection law. For more information about how and why we process personal data at the CMA for our work and for information about your rights, including your right to complain, read more in the <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter</a> (opens in new window).</p>
+        <p class="govuk-body">When we process personal data, we follow data protection law, as set out in the General Data Protection Regulation 2016 (GDPR) and the Data Protection Act 2018, and other law designed to protect sensitive information. We will be the controller under data protection law. For more information about how and why we process personal data at the CMA for our work and for information about your rights, including your right to complain, read more in the <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter</a> (opens in new tab).</p>
       confirm_and_send: Confirm and send
     summary:
       page_title: Report submitted
-      your_reference_number: Your enquiry number
+      your_reference_number: Your submission number
       email_notification_html: <p class="govuk-body">We have sent you a confirmation email.</p>
       body_html: |
         <p class="govuk-body">Thank you for your submission. It's been sent to the Competition and Markets Authority (CMA). We are monitoring all the information you've provided, and will take action where appropriate.</p>
@@ -211,10 +217,10 @@ en:
         <p class="govuk-body">A <a href="https://cheatingorcompeting.campaign.gov.uk/#what_is_a_business_cartel_">business cartel</a> occurs when 2 or more businesses agree that they won’t compete with each other.</p>
         <p class="govuk-body">This may include:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>Fixing prices</li>
-          <li>Agreeing not to compete for jobs (bid-rigging)</li>
-          <li>Sharing markets (for example, by geographical area)</li>
-          <li>Sharing sensitive operational information between businesses</li>
+          <li>fixing prices</li>
+          <li>agreeing not to compete for jobs (bid-rigging)</li>
+          <li>sharing markets (for example, by geographical area)</li>
+          <li>sharing sensitive operational information between businesses</li>
         </ul>
         <p class="govuk-body">You may be eligible for a financial reward if you give us information that leads to an investigation, for more information read <a href="https://www.gov.uk/government/publications/cartels-informant-rewards-policy">Cartels: policy for witnessing and reporting</a>.</p>
         <form action="https://cma-553899.workflowcloud.com/forms/c35b9608-b73d-464c-bbfa-0b3ccda758b2" method="get" target="_blank">
@@ -223,17 +229,20 @@ en:
         <h2 class="govuk-heading-m">Apply for leniency</h2>
         <p class="govuk-body">If you or your company has been involved in a cartel, you may be able to apply for leniency.
     whistleblowing:
-      page_title: Whistleblowing
+      page_title: You cannot report whistleblowing using this service
       body_html: |
         <p class="govuk-body">Whistleblowers are employees, or former employees, that report illegal activities carried out by the business or organisation they're employed by.</p>
         <p class="govuk-body">If the illegal activity relates to the sale of products, the supply of services or about competition affecting markets in the UK, it's important you report it to the CMA.</p>
-        <p class="govuk-body">You can email: <a href="mailto:whistleblower@cma.gov.uk">whistleblower@cma.gov.uk</a></p>
+        <p class="govuk-body">To report whistleblowing, you can email <a href="mailto:whistleblower@cma.gov.uk">whistleblower@cma.gov.uk</a>.</p>
         <p class="govuk-body">Find out more about what it means to be a whistleblower, including your rights and how the CMA will protect your identity on our <a href="https://www.gov.uk/government/publications/whistleblowers-at-the-cma">whistleblowing guidance page</a>.</p>
     print:
-      page_title: Print or save submission
+      page_title: Your report
+      body_html: |
+        <p class="govuk-body">To save a copy of your answers as a PDF, select print, and then 'Save as PDF' from your browser options.</p>
+        <p class="govuk-body">You can also copy and paste the information you have provided below into a document or note.</p>
       classification: What are you reporting to the CMA?
-      businesses: Businesses involved
-      what_happened: What happened
+      businesses: Tell us about the businesses involved
+      what_happened: What happened?
       additional_information: Additional information
       nation: Where in the UK are you reporting from?
       nation_options:
@@ -241,25 +250,28 @@ en:
         scotland: Scotland
         ni: Northern Ireland
         wales: Wales
-        notuk: I don't live in the UK
         unknown: I'm not sure
-      evidence: Evidence files
+        notuk: I don't live in the UK
+      evidence: Upload supporting evidence
       no_evidence_uploaded: No evidence uploaded
       contact: Contact information
-      no_contact_info: No contact information provided
+      no_contact_info: No contact information provided.
+      no_email_address: If you do not provide an email address, you will not receive email confirmation of your submission.
       contact_first_name: First name
       contact_last_name: Last name
       contact_email: Email address
       contact_telephone: Telephone number
+      related_investigation: Which investigation are you telling us about?
+      related_reference_number: What is the refererence number of your previous report? 
       classification_options:
         business: A problem with a business
         sector: Issues in a sector of the UK economy
-        cartels: Businesses agreeing to not compete with each other
-        ongoing: Information or evidence related to an ongoing investigation
+        cartels: Businesses agreeing not to compete with each other
+        ongoing: Information or evidence related to an ongoing CMA investigation
         whistleblowing: Issues with a business I work or worked with (whistleblowing)
-        more: Something I've already told you about
+        more: An issue I've already submitted to you
         other: Something else
-
+      not_provided: Not provided
     error:
       page_title: A problem has occurred
       body_html: <p class="govuk-body">Something unexpected has happened.</p>
@@ -276,7 +288,7 @@ en:
           cartels: Businesses agreeing to not compete with each other
           ongoing: Information or evidence related to an ongoing investigation
           whistleblowing: Issues with a business I work or worked with (whistleblowing)
-          more: Something I've already told you about
+          more: An issue I've already submitted to you
           other: Something else
         nation_options:
           england: England

@@ -124,7 +124,7 @@
                         <%= evidence_file.filename %><br />
                     <% end %>
                 <% else %>
-                    <%= t(".no_evidence_files") %>
+                    <%= t(".no_evidence_uploaded") %>
                 <% end %>
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -141,92 +141,77 @@
     
     <h2 class="govuk-heading-l"><%= t('.contact') %></h2>
     
-    <% if @submission.contactemail.blank? %>
-        <p class="govuk-body"><%= t('.no_email_address') %></p>
-    <% end %>
-    
-    <% if @submission.contactfirstname.blank? \
-    and @submission.contactlastname.blank? \
-    and @submission.contacttelephone.blank? \
-    and @submission.contactemail.blank? %>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">&nbsp;</dt>
-                <dd class="govuk-summary-list__value">
-                    <%= t('.no_contact_info') %>
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
-                        Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
-                    <% end %>
-                </dd>
-            </div>
-        </dl>
-    <% end %>
-
-    <% if !@submission.contactfirstname.blank? %>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key"><%= t('.contact_first_name') %></dt>
-                <dd class="govuk-summary-list__value">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.contact_first_name') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% if (!@submission.contactfirstname.blank?) %>
                     <%= @submission.contactfirstname %>
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
-                        Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
-                    <% end %>
-                </dd>
-            </div>
-        </dl>
-    <% end %>
-
-    <% if !@submission.contactlastname.blank? %>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key"><%= t('.contact_last_name') %></dt>
-                <dd class="govuk-summary-list__value">
+                <% else %>
+                    <%= t(".not_provided") %>
+                <% end %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+    
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.contact_last_name') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% if (!@submission.contactlastname.blank?) %>
                     <%= @submission.contactlastname %>
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
-                        Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
-                    <% end %>
-                </dd>
-            </div>
-        </dl>
-    <% end %>
+                <% else %>
+                    <%= t(".not_provided") %>
+                <% end %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
 
-    <% if !@submission.contactemail.blank? %>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key"><%= t('.contact_email') %></dt>
-                <dd class="govuk-summary-list__value">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.contact_email') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% if (!@submission.contactemail.blank?) %>
                     <%= @submission.contactemail %>
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
-                        Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
-                    <% end %>
-                </dd>
-            </div>
-        </dl>
-    <% end %>
-
-    <% if !@submission.contacttelephone.blank? %>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key"><%= t('.contact_telephone') %></dt>
-                <dd class="govuk-summary-list__value">
+                <% else %>
+                    <%= t(".not_provided") %>
+                <% end %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+    
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.contact_telephone') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% if (!@submission.contacttelephone.blank?) %>
                     <%= @submission.contacttelephone %>
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                    <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
-                        Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
-                    <% end %>
-                </dd>
-            </div>
-        </dl>
-    <% end %>
+                <% else %>
+                    <%= t(".not_provided") %>
+                <% end %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_contact_path, class: 'govuk-link', title: "Change #{t('.contact').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.contact').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
 
 <% end %>
 
