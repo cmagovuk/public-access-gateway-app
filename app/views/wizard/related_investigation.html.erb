@@ -5,8 +5,12 @@
 
 <%= t(".body_html") %>
 
+
+
 <%= form_for @submission, url: wizard_related_investigation_submit_path, :method => :post do |f| %>
 
+    <%= f.govuk_error_summary %>
+    
     <%= f.hidden_field :status, :value => :related_investigation %>
 
     <%= f.govuk_text_field :relatedinvestigation,

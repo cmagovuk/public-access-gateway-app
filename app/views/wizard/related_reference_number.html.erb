@@ -5,10 +5,10 @@
 
 <%= t(".body_html") %>
 
-<%= f.govuk_error_summary %>
-
 <%= form_for @submission, url: wizard_related_reference_number_submit_path, :method => :post do |f| %>
 
+    <%= f.govuk_error_summary %>
+    
     <%= f.hidden_field :status, :value => :related_reference_number %>
 
     <%= f.govuk_text_field :relatedreferencenumber,
