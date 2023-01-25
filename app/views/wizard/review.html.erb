@@ -1,6 +1,6 @@
 <% title(t('.page_title')) %>
 
-<h1 class="govuk-heading-xl"><%= t(".review") %></h1>
+<h1 class="govuk-heading-xl"><%= t(".page_title") %></h1>
 
 <h2 class="govuk-heading-l"><%= t(".submission") %></h2>
 
@@ -94,21 +94,7 @@
 <% end %>
 
 
-<% if Router.Contains(@submission.classification.to_sym,:nation) %>
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key"><%= t('.nation') %></dt>
-            <dd class="govuk-summary-list__value">
-                <%= t(".nation_options." + @submission.nation.to_s) %>
-            </dd>
-            <dd class="govuk-summary-list__actions">
-                <%= link_to wizard_nation_path, class: 'govuk-link', title: "Change #{t('.nation').downcase}" do %>
-                    Change<span class="govuk-visually-hidden"> <%= t('.nation').downcase %></span>
-                <% end %>
-            </dd>
-        </div>
-    </dl>
-<% end %>
+
 
 
 <% if Router.Contains(@submission.classification.to_sym,:evidence) %>
@@ -213,10 +199,25 @@
         </div>
     </dl>
 
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.nation') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= t(".nation_options." + @submission.nation.to_s) %>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <%= link_to wizard_nation_path, class: 'govuk-link', title: "Change #{t('.nation').downcase}" do %>
+                    Change<span class="govuk-visually-hidden"> <%= t('.nation').downcase %></span>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+
+
 <% end %>
 
 <%= form_for @submission, url: wizard_review_submit_path, method: :post do |f| %>
     <%= f.hidden_field :status, :value => :review %>
     <%= f.govuk_error_summary %>
-    <%= f.govuk_submit %>
+    <%= f.govuk_submit t(".confirm_and_send") %>
 <% end %>

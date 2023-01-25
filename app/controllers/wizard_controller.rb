@@ -224,7 +224,7 @@ class WizardController < ApplicationController
 
     # React to submission of the contact page
     def contact_submit
-        if @submission.update(params.require(:submission).permit(:status,:contactfirstname, :contactlastname, :contactemail, :contacttelephone))
+        if @submission.update(params.require(:submission).permit(:status,:contactfirstname, :contactlastname, :contactemail, :contacttelephone, :nation))
             redirect_to :controller => :wizard, :action => next_step() and return
         else
             render :contact and return
@@ -239,21 +239,7 @@ class WizardController < ApplicationController
 
     # React to submission of the review page
     def review_submit
-        if @submission.update(params.require(:submission).permit(:status))
-            redirect_to :controller => :wizard, :action => :information_use and return
-        else
-            render :review and return
-        end
-    end
 
-    # Render the Information Use page
-    def information_use
-        check_route(:information_use) or return
-    end
-
-    # React to submission of the Information Use page (calls the Azure Function)
-    def information_use_submit
-        
         if @submission.referencenumber.blank?
 
             @submission.transmission = Transmitter.BuildJSON(@submission)
@@ -307,6 +293,7 @@ class WizardController < ApplicationController
 
     end
 
+    
     # Render the Cartels page
     def cartels
         check_route(:cartels) or return

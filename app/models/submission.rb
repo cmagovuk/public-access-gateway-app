@@ -60,7 +60,7 @@ class Submission < ApplicationRecord
     end
 
     def validate_nation
-      if status.to_sym == :nation and nation.blank?
+      if status.to_sym == :contact and nation.blank?
         errors.add(:nation, :blank)
       end
     end
