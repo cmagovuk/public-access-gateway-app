@@ -230,14 +230,23 @@ en:
       your_reference_number: Your submission number
       email_notification_html: <p class="govuk-body">We have sent you a confirmation email.</p>
       body_html: |
-        <p class="govuk-body">Thank you for your submission. It's been sent to the Competition and Markets Authority (CMA). We are monitoring all the information you've provided, and will take action where appropriate.</p>
-        <p class="govuk-body">We will ask for your submission number if you contact us again in future to provide more information or get an update about this report.</p>
+        <p class="govuk-body">Thank you for your report. It's been sent to the Competition and Markets Authority (CMA).</p>
+        <p class="govuk-body">We can't respond in detail to all individual complaints.</p>
+        <p class="govuk-body">As a result of the information you provide, we may:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>contact businesses involved with your submission</li>
+          <li>investigate and take legal action against businesses</li>
+          <li>conduct studies or investigations into markets</li>
+          <li>prosecute people involved with cartels</li>
+        </ul>
+        <p class="govuk-body">If we decide to open a formal enforcement case, we may contact you and give you the opportunity to comment on this.</p>
+        <p class="govuk-body">We will contact you if we need to rely on the information you've provided to open the case. If you have any questions or concerns, please contact us at <a href="mailto:general.enquiries@cma.gov.uk">general.enquiries@cma.gov.uk</a>.</p>
         <p class="govuk-body"><a href="%{service_review_url}" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)</p>
       save_button: View your report
     cartels:
-      page_title: Report businesses agreeing not to compete with each other
+      page_title: You cannot report business cartels using this service
       body_html: |
-        <p class="govuk-body">A <a href="https://cheatingorcompeting.campaign.gov.uk/#what_is_a_business_cartel_">business cartel</a> occurs when 2 or more businesses agree that they won’t compete with each other.</p>
+        <p class="govuk-body">A <a href="https://cheatingorcompeting.campaign.gov.uk/#what_is_a_business_cartel_">business cartel</a> occurs when businesses agree that they won't compete with each other.</p>
         <p class="govuk-body">This may include:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>fixing prices</li>
@@ -245,19 +254,21 @@ en:
           <li>sharing markets (for example, by geographical area)</li>
           <li>sharing sensitive operational information between businesses</li>
         </ul>
-        <p class="govuk-body">You may be eligible for a financial reward if you give us information that leads to an investigation, for more information read <a href="https://www.gov.uk/government/publications/cartels-informant-rewards-policy">Cartels: policy for witnessing and reporting</a>.</p>
-        <form action="https://cma-553899.workflowcloud.com/forms/c35b9608-b73d-464c-bbfa-0b3ccda758b2" method="get" target="_blank">
-          <button class="govuk-button" data-module="govuk-button">Report a business cartel</button>
-        </form>
-        <h2 class="govuk-heading-m">Apply for leniency</h2>
-        <p class="govuk-body">If you or your company has been involved in a cartel, you may be able to apply for leniency.
+        <p class="govuk-body">You may be eligible for a financial reward if you give us information that leads to an investigation, or if you or your company has been involved in a cartel you may be able to apply for leniency.</p>
+        <p class="govuk-body">For more information read <a href="https://www.gov.uk/government/publications/cartels-informant-rewards-policy">Cartels: policy for witnessing and reporting</a>.</p>
+        <p class="govuk-body">You can report cartein information to us:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>using the <a href="https://cma-553899.workflowcloud.com/forms/c35b9608-b73d-464c-bbfa-0b3ccda758b2">online reporting form</a></li>
+          <li>by emailing <a href="mailto:cartelshotline@cma.gov.uk">cartelshotline@cma.gov.uk</a></li>
+          <li>by calling 020 3738 6888</li>
+        </ul>
     whistleblowing:
-      page_title: You cannot report whistleblowing using this service
+      page_title: You cannot use this service to raise a concern about your employer
       body_html: |
-        <p class="govuk-body">Whistleblowers are employees, or former employees, that report illegal activities carried out by the business or organisation they're employed by.</p>
-        <p class="govuk-body">If the illegal activity relates to the sale of products, the supply of services or about competition affecting markets in the UK, it's important you report it to the CMA.</p>
-        <p class="govuk-body">To report whistleblowing, you can email <a href="mailto:whistleblower@cma.gov.uk">whistleblower@cma.gov.uk</a>.</p>
-        <p class="govuk-body">Find out more about what it means to be a whistleblower, including your rights and how the CMA will protect your identity on our <a href="https://www.gov.uk/government/publications/whistleblowers-at-the-cma">whistleblowing guidance page</a>.</p>
+        <p class="govuk-body">To report your current or previous employer's possible involvement in anti-competitive or unfair trading practices (known as whistleblowing), email <a href="mailto:whistleblower@cma.gov.uk">whistleblower@cma.gov.uk</a>.</p>
+
+        <p class="govuk-body">Whistleblowers are employees, or former employees, that report suspected illegal activities or suspicious behaviour carried out by the organisation they're currently or have previously been employed by.</p>
+        <p class="govuk-body">Find out more about what it means to be a whistleblower, including your rights and how the CMA will protect your identity on our <a href="https://www.gov.uk/government/publications/whistleblowers-at-the-cma" target="_blank">whistleblowing guidance page</a> (opens in a new tab).</p>
     print:
       page_title: Your report
       body_html: |
