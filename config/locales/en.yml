@@ -120,7 +120,7 @@ en:
     evidence:
       page_title: Upload evidence
       hint_html: |
-        <p class="govuk-body">You can add up to 5 files to your report. Most file types are supported (for example, PDF, DOC, Excel, JPG, PNG) And can beup to 10MB each.</p>
+        <p class="govuk-body">You can add up to 5 files to your report. Most file types are supported (for example, PDF, DOC, Excel, JPG, PNG) And can be up to 10MB each.</p>
         <p class="govuk-body">For can upload any evidence that supports your report.</p>
         <p class="govuk-body">For example:</p>
         <ul class="govuk-list govuk-list--bullet">
