@@ -120,10 +120,9 @@ en:
     evidence:
       page_title: Upload evidence
       hint_html: |
-        <p class="govuk-body">All evidence uploaded is carefully protected and handled in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter</a> (also known as privacy notice - opens in new tab).</p>
-        <p class="govuk-body">You can upload up to 5 files, which can be up to 10MB each.</p>
-        <p class="govuk-body">Most file types are supported (PDF, DOC, Excel, JPG, etc).</p>
-        <p class="govuk-body">For example, you can upload:</p>
+        <p class="govuk-body">You can add up to 5 files to your report. Most file types are supported (for example, PDF, DOC, Excel, JPG, PNG) And can beup to 10MB each.</p>
+        <p class="govuk-body">For can upload any evidence that supports your report.</p>
+        <p class="govuk-body">For example:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>contracts</li>
           <li>quotes</li>
@@ -133,6 +132,7 @@ en:
           <li>screenshots</li>
           <li>any evidence that supports your submission</li>
         </ul>
+        <p class="govuk-body">We carefully protect and handle all evidence in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in new tab)</a> (also known as privacy notice).</p>        
         <p class="govuk-body">You do not need to submit evidence to report something to us.</p>
       filename: File name
       filesize: File size
