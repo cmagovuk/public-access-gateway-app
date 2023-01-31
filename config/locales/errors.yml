@@ -17,6 +17,7 @@ en:
         too_long: County must be %{count} characters or fewer
       postcode:
         too_long: Postcode must be %{count} characters or fewer
+        invalid: Postcode must be a valid UK postcode
       url:
         too_long: Web address must be %{count} characters or fewer
       nation:
