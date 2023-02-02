@@ -11,11 +11,11 @@
     <%= f.govuk_fieldset legend: { text: t('.page_title'),size: "l" } do %>
     
         <%= f.govuk_text_field :name, label: { text: t('.name') }, width: 'two-thirds' %>
-        <%= f.govuk_text_field :street, label: { text: t('.street') }, width: 'one-half' %>
-        <%= f.govuk_text_field :townorcity, label: { text: t('.town') }, width: 'one-half' %>
-        <%= f.govuk_text_field :county, label: { text: t('.county') }, width: 'one-half' %>
-        <%= f.govuk_text_field :postcode, label: { text: t('.postcode') }, width: 'one-quarter' %>
-        <%= f.govuk_url_field :url, label: { text: t('.website') }, width: 'one-half' %>
+        <%= f.govuk_text_field :street, label: { text: t('.street') }, width: 'two-thirds' %>
+        <%= f.govuk_text_field :townorcity, label: { text: t('.town') }, width: 'two-thirds' %>
+        <%= f.govuk_text_field :county, label: { text: t('.county') }, width: 'two-thirds' %>
+        <%= f.govuk_text_field :postcode, label: { text: t('.postcode') }, width: 'two-thirds' %>
+        <%= f.govuk_url_field :url, label: { text: t('.website') }, width: 'two-thirds' %>
 
     <% end %>
 

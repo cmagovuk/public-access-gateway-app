@@ -1,13 +1,13 @@
 class Router
 
     Routes = {
-        :business       => [:classify, :businesses, :what_happened, :evidence, :contact, :review, :summary],
-        :sector         => [:classify, :what_happened, :evidence, :contact, :review, :summary],
-        :more           => [:classify, :related_reference_number, :what_happened, :evidence, :contact, :review, :summary],
-        :ongoing        => [:classify, :related_investigation, :what_happened, :evidence, :contact, :review, :summary],
+        :business       => [:classify, :businesses, :what_happened, :evidence, :contact, :nation, :review, :summary],
+        :sector         => [:classify, :what_happened, :evidence, :contact, :nation, :review, :summary],
+        :more           => [:classify, :related_reference_number, :what_happened, :evidence, :contact, :nation, :review, :summary],
+        :ongoing        => [:classify, :related_investigation, :what_happened, :evidence, :contact, :nation, :review, :summary],
         :cartels        => [:classify, :cartels],
         :whistleblowing => [:classify, :whistleblowing],
-        :other          => [:classify, :businesses, :what_happened, :evidence, :contact, :review, :summary]
+        :other          => [:classify, :businesses, :what_happened, :evidence, :contact, :nation, :review, :summary]
     }.freeze
 
     def self.Route(classification)

@@ -13,9 +13,7 @@
     
     <%= f.hidden_field :status, :value => :related_investigation %>
 
-    <%= f.govuk_text_field :relatedinvestigation,
-    label: { text: t('.caption') }
-    %>
+    <%= f.govuk_text_field :relatedinvestigation, label: { text: t('.caption') }, width: 'two-thirds' %>
 
     <%= f.govuk_submit %>
     

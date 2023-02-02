@@ -16,8 +16,6 @@
         <%= f.govuk_email_field :contactemail, label: { text: t('.email_address') }, width: 'one-half', hint: {text: t('.email_address_hint') } %>
         <%= f.govuk_phone_field :contacttelephone, label: { text: t('.telephone_number') }, width: 'one-half', hint: {text: t('.telephone_number_hint') } %>
 
-        <%= f.govuk_collection_radio_buttons :nation, Submission::NATION_OPTIONS, ->(option) {option}, nil, legend: { text: t('.nation'), size:"m"} %>
-
     <% end %>
 
     <%= f.govuk_submit %>

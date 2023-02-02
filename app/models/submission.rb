@@ -7,7 +7,7 @@ class Submission < ApplicationRecord
 
     # validates_associated :businesses
 
-    CLASSIFY_OPTIONS = %w[business sector cartels ongoing whistleblowing more other].freeze
+    CLASSIFY_OPTIONS = %w[business sector cartels ongoing whistleblowing more].freeze
 
     NATION_OPTIONS = %w[england scotland ni wales notuk unknown].freeze
 
@@ -60,7 +60,7 @@ class Submission < ApplicationRecord
     end
 
     def validate_nation
-      if status.to_sym == :contact and nation.blank?
+      if status.to_sym == :nation and nation.blank?
         errors.add(:nation, :blank)
       end
     end

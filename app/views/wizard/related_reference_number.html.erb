@@ -11,9 +11,7 @@
     
     <%= f.hidden_field :status, :value => :related_reference_number %>
 
-    <%= f.govuk_text_field :relatedreferencenumber,
-    label: { text: t('.caption') }
-    %>
+    <%= f.govuk_text_field :relatedreferencenumber,label: { text: t('.caption') }, width: 'two-thirds' %>
 
     <%= f.govuk_submit %>
     

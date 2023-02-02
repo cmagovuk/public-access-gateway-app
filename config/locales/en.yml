@@ -53,7 +53,7 @@ en:
         Report an issue to the CMA
         </h1>
         <p class="govuk-body">Use this service to tell the Competition and Markets Authority (CMA) about issues with a business, a market, or to provide information and evidence about a new or existing case.</p>
-        <p class="govuk-body">Do not use this service if you&rsquo;re seeking immediate advice and support. <a href="https://www.gov.uk/consumer-advice">Contact the relevant consumer advice organisation in your area</a>.</p>
+        <p class="govuk-body">Do not use this service if you&rsquo;re seeking immediate advice and support. <a href="https://www.gov.uk/consumer-advice" target="_blank">Contact the relevant consumer advice organisation in your area (opens in a new tab)</a>.</p>
         
         <h2 class="govuk-heading-m">Information you will need</h2>
         <p class="govuk-body">You will be asked to provide:</h2>
@@ -66,7 +66,7 @@ en:
         <h2 class="govuk-heading-m">How we use your information</h2>
         <p class="govuk-body">As part of your report, you can choose to provide contact details to the CMA.</p>
         <p class="govuk-body">If you provide these details, the CMA will be processing your personal data. 'Personal data' is information which relates to an individual who can be identified from it.</p>
-        <p class="govuk-body">We take all reports seriously. If you wish to make your report anonymously it will be handled in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter</a> (also known as privacy notice).</p>
+        <p class="govuk-body">We take all reports seriously. If you wish to make your report anonymously it will be handled in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in a new tab)</a> (also known as privacy notice).</p>
         <a href="./start_submit" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
         Start now
         <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
@@ -134,11 +134,11 @@ en:
         </ul>
         <p class="govuk-body">We carefully protect and handle all evidence in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in new tab)</a> (also known as privacy notice).</p>        
         <p class="govuk-body">You do not need to submit evidence to report something to us.</p>
-      filename: File name
-      filesize: File size
+      filename: file name
+      filesize: file size
       action: Action
       remove: Remove
-      upload_file: Choose file
+      upload_file_button: Choose file
       no_files: No files have been uploaded yet
     nation:
       page_title: Where in the UK are you reporting from?
@@ -223,7 +223,7 @@ en:
       page_title: More information on how your data will be used
       body_html: |
         <p class="govuk-body">We will only process (use or disclose) personal data where it is necessary, in order to exercise our statutory functions. For example, to contact you (if you have chosen to provide contact details) about your complaint, or to help us develop our understanding of potential issues arising in connection with the Coronavirus outbreak, or to inform competition or consumer enforcement action, should that be appropriate. Where necessary, we may share personal data with other law enforcement, consumer or regulatory bodies (nationally and internationally).</p>
-        <p class="govuk-body">When we process personal data, we follow data protection law, as set out in the General Data Protection Regulation 2016 (GDPR) and the Data Protection Act 2018, and other law designed to protect sensitive information. We will be the controller under data protection law. For more information about how and why we process personal data at the CMA for our work and for information about your rights, including your right to complain, read more in the <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter</a> (opens in new tab).</p>
+        <p class="govuk-body">When we process personal data, we follow data protection law, as set out in the General Data Protection Regulation 2016 (GDPR) and the Data Protection Act 2018, and other law designed to protect sensitive information. We will be the controller under data protection law. For more information about how and why we process personal data at the CMA for our work and for information about your rights, including your right to complain, read more in the <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in a new tab)</a>.</p>
       confirm_and_send: Confirm and send
     summary:
       page_title: Report submitted
@@ -241,12 +241,12 @@ en:
         </ul>
         <p class="govuk-body">If we decide to open a formal enforcement case, we may contact you and give you the opportunity to comment on this.</p>
         <p class="govuk-body">We will contact you if we need to rely on the information you've provided to open the case. If you have any questions or concerns, please contact us at <a href="mailto:general.enquiries@cma.gov.uk">general.enquiries@cma.gov.uk</a>.</p>
-        <p class="govuk-body"><a href="%{service_review_url}" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)</p>
+        <p class="govuk-body"><a href="%{service_review_url}" class="govuk-link" target="_blank">What did you think of this service? (opens in a new tab)</a> (takes 30 seconds)</p>
       save_button: View your report
     cartels:
       page_title: You cannot report business cartels using this service
       body_html: |
-        <p class="govuk-body">A <a href="https://cheatingorcompeting.campaign.gov.uk/#what_is_a_business_cartel_">business cartel</a> occurs when businesses agree that they won't compete with each other.</p>
+        <p class="govuk-body">A <a href="https://cheatingorcompeting.campaign.gov.uk/#what_is_a_business_cartel_" target="_blank">business cartel (opens in a new tab)</a> occurs when businesses agree that they won't compete with each other.</p>
         <p class="govuk-body">This may include:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>fixing prices</li>
@@ -255,10 +255,10 @@ en:
           <li>sharing sensitive operational information between businesses</li>
         </ul>
         <p class="govuk-body">You may be eligible for a financial reward if you give us information that leads to an investigation, or if you or your company has been involved in a cartel you may be able to apply for leniency.</p>
-        <p class="govuk-body">For more information read <a href="https://www.gov.uk/government/publications/cartels-informant-rewards-policy">Cartels: policy for witnessing and reporting</a>.</p>
+        <p class="govuk-body">For more information read <a href="https://www.gov.uk/government/publications/cartels-informant-rewards-policy" target="_blank">Cartels: policy for witnessing and reporting (opens in a new tab)</a>.</p>
         <p class="govuk-body">You can report cartein information to us:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>using the <a href="https://cma-553899.workflowcloud.com/forms/c35b9608-b73d-464c-bbfa-0b3ccda758b2">online reporting form</a></li>
+          <li>using the <a href="https://cma-553899.workflowcloud.com/forms/c35b9608-b73d-464c-bbfa-0b3ccda758b2" target="_blank">online reporting form (opens in a new tab)</a></li>
           <li>by emailing <a href="mailto:cartelshotline@cma.gov.uk">cartelshotline@cma.gov.uk</a></li>
           <li>by calling 020 3738 6888</li>
         </ul>
@@ -266,9 +266,8 @@ en:
       page_title: You cannot use this service to raise a concern about your employer
       body_html: |
         <p class="govuk-body">To report your current or previous employer's possible involvement in anti-competitive or unfair trading practices (known as whistleblowing), email <a href="mailto:whistleblower@cma.gov.uk">whistleblower@cma.gov.uk</a>.</p>
-
         <p class="govuk-body">Whistleblowers are employees, or former employees, that report suspected illegal activities or suspicious behaviour carried out by the organisation they're currently or have previously been employed by.</p>
-        <p class="govuk-body">Find out more about what it means to be a whistleblower, including your rights and how the CMA will protect your identity on our <a href="https://www.gov.uk/government/publications/whistleblowers-at-the-cma" target="_blank">whistleblowing guidance page</a> (opens in a new tab).</p>
+        <p class="govuk-body">Find out more about what it means to be a whistleblower, including your rights and how the CMA will protect your identity on our <a href="https://www.gov.uk/government/publications/whistleblowers-at-the-cma" target="_blank">whistleblowing guidance page (opens in a new tab)</a>.</p>
     print:
       page_title: Your report
       body_html: |
