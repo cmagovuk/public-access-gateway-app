@@ -190,7 +190,7 @@ en:
       businesses: Tell us about the businesses involved
       what_happened: Tell us what happened
       additional_information: Additional information
-      nation: Where are you reporting from?
+      nation: Where in the UK are you reporting from?
       nation_options:
         england: England
         scotland: Scotland
@@ -277,7 +277,7 @@ en:
       businesses: Tell us about the businesses involved
       what_happened: Tell us what happened
       additional_information: Additional information
-      nation: Where are you reporting from?
+      nation: Where in the UK are you reporting from?
       nation_options:
         england: England
         scotland: Scotland
