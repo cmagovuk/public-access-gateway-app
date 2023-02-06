@@ -54,7 +54,6 @@ en:
         </h1>
         <p class="govuk-body">Use this service to tell the Competition and Markets Authority (CMA) about issues with a business, a market, or to provide information and evidence about a new or existing case.</p>
         <p class="govuk-body">Do not use this service if you&rsquo;re seeking immediate advice and support. <a href="https://www.gov.uk/consumer-advice" target="_blank">Contact the relevant consumer advice organisation in your area (opens in a new tab)</a>.</p>
-        
         <h2 class="govuk-heading-m">Information you will need</h2>
         <p class="govuk-body">You will be asked to provide:</h2>
         <ul class="govuk-list govuk-list--bullet">
@@ -145,7 +144,7 @@ en:
     related_reference_number:
       page_title: What is the refererence number of your previous report? 
       body_html: |
-        <p class="govuk-body">You'll be given a refernece number when you submit a report to us. THis will be displayed at the end of the form, and sent to you by email if you've given us an email address.</p>
+        <p class="govuk-body">You'll be given a referenece number when you submit a report to us. This will be displayed at the end of the form, and sent to you by email if you've given us an email address.</p>
         <p class="govuk-body">If you don't know your reference number, or don't have one, select continue.</p>      
       caption: Reference number
     related_investigation:
@@ -167,7 +166,7 @@ en:
           </summary>
           <div class="govuk-details__text">
             <p class="govuk-body">We'll only use or disclose your personal data when we need to, which includes our legal functions.</p>
-            <p class="govuk-body">For example, we may contact you (if you’ve chosen to share your contact details with us) to chat to you about:</p>
+            <p class="govuk-body">For example, we may contact you (if you've chosen to share your contact details with us) to chat to you about:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>your report to us</li>
               <li>how we can develop our understanding of potential issues arising</li>
@@ -256,7 +255,7 @@ en:
         </ul>
         <p class="govuk-body">You may be eligible for a financial reward if you give us information that leads to an investigation, or if you or your company has been involved in a cartel you may be able to apply for leniency.</p>
         <p class="govuk-body">For more information read <a href="https://www.gov.uk/government/publications/cartels-informant-rewards-policy" target="_blank">Cartels: policy for witnessing and reporting (opens in a new tab)</a>.</p>
-        <p class="govuk-body">You can report cartein information to us:</p>
+        <p class="govuk-body">You can report certain information to us:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>using the <a href="https://cma-553899.workflowcloud.com/forms/c35b9608-b73d-464c-bbfa-0b3ccda758b2" target="_blank">online reporting form (opens in a new tab)</a></li>
           <li>by emailing <a href="mailto:cartelshotline@cma.gov.uk">cartelshotline@cma.gov.uk</a></li>
