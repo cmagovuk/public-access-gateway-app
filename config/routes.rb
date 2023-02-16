@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   
   #resources :businesses
 
-  get '' => 'wizard#service_homepage'
+  # redirect no URL
+  get  "" => redirect("/wizard/start")
+  
+  # redirect only the wizard
+  get  "/wizard" => redirect("/wizard/start")
 
   # Map URLs to Controllers and Actions (controller#action)
 
