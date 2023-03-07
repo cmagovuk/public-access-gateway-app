@@ -35,7 +35,7 @@ en:
   link:
     back: Back
   feedback:
-    subject: Feedback for 'CMA Public Gateway' form
+    subject: Feedback for 'Report an issue to the CMA' form
   cookie_banner:
     confirmation_message:
       true: You've accepted analytics cookies.
