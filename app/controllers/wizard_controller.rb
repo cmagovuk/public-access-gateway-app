@@ -10,19 +10,15 @@ class WizardController < ApplicationController
 
     # Render the start page
     def start
-        reset_session
+        redirect_to :controller => :wizard, :action => :start_submit and return
     end
 
     # React to submission of the start page
     def start_submit
-        @submission = Submission.new(:status => :start)
         
-        if @submission.save
-            session[:submission_id] = @submission.id
-            redirect_to :controller => :wizard, :action => :classify and return
-        else
-            render :start and return
-        end
+        session[:submission_id] = nil
+        redirect_to :controller => :wizard, :action => :classify and return
+        
     end
 
     # Render the classify page
@@ -32,12 +28,18 @@ class WizardController < ApplicationController
 
     # React to submission of the classify page
     def classify_submit
+
+        @submission = Submission.new
+        @submission.status = :classify
+        
         if @submission.update(params.require(:submission).permit(:status,:classification))
+            session[:submission_id] = @submission.id
             session[:review_reached] = nil
             redirect_to :controller => :wizard, :action => next_step() and return
         else
             render :classify and return
         end
+
     end
 
     # Render the Related Reference Number page
@@ -344,7 +346,7 @@ private
     def load_submission
         @submission = Submission.find(session[:submission_id])
     rescue
-        @submission = nil
+        @submission = Submission.new
     end
 
 

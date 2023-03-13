@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   # redirect no URL
   get  "" => redirect("/wizard/start")
+
+  get "status" => redirect("status#status")
   
   # redirect only the wizard
   get  "/wizard" => redirect("/wizard/start")
