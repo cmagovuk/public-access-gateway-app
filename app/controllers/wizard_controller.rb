@@ -10,6 +10,7 @@ class WizardController < ApplicationController
 
     # Render the start page
     def start
+
         redirect_to :controller => :wizard, :action => :start_submit and return
     end
 
@@ -17,6 +18,10 @@ class WizardController < ApplicationController
     def start_submit
         
         session[:submission_id] = nil
+        session[:summary_reached] = nil
+        session[:review_reached] = nil
+
+
         redirect_to :controller => :wizard, :action => :classify and return
         
     end
@@ -35,6 +40,7 @@ class WizardController < ApplicationController
         if @submission.update(params.require(:submission).permit(:status,:classification))
             session[:submission_id] = @submission.id
             session[:review_reached] = nil
+            session[:summary_reached] = nil
             redirect_to :controller => :wizard, :action => next_step() and return
         else
             render :classify and return
