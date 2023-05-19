@@ -1,5 +1,5 @@
 class WizardController < ApplicationController
-    before_action :load_submission
+    before_action :check_redirect, :load_submission
 
     SERVICE_REVIEW_URL_ENV = "SERVICE_REVIEW_URL".freeze
 
@@ -10,8 +10,9 @@ class WizardController < ApplicationController
 
     # Render the start page
     def start
-
+        
         redirect_to :controller => :wizard, :action => :start_submit and return
+        
     end
 
     # React to submission of the start page
@@ -347,6 +348,12 @@ class WizardController < ApplicationController
 
 
 private
+
+    def check_redirect
+        if !ENV['REDIRECT_URL'].blank?
+            redirect_to ENV['REDIRECT_URL']
+        end
+    end
 
     # all wizard controller methods try to load the submission if it exists
     def load_submission
