@@ -46,6 +46,15 @@ en:
       cookies: Cookies
       accessibility_link: Accessibility statement
   wizard:
+    test_banner_html: |
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">This is the test system. If reporting a real issue to the CMA, please visit <a class="govuk-notification-banner__link" href="https://genenqwebapp.azurewebsites.net">Report an Issue to the CMA</a>.</p>
+        </div>
+      </div>
     start:
       page_title: Report an issue to the CMA
       page_html: |
