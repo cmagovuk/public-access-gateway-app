@@ -7,6 +7,10 @@ module ApplicationHelper
     Rails.application.config.x.analytics_tracking_id
   end
 
+  def test_message
+    Rails.application.config.x.test_message
+  end
+
   def link_info_charter
     Rails.application.config.x.link_info_charter
   end

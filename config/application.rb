@@ -46,5 +46,6 @@ module GovukCmaPublicGateway
     config.x.feedback_email = ENV["FEEDBACK_EMAIL"]
     config.x.maintenance_text = ENV["MAINTENANCE_TEXT"]
     config.x.link_start_page = ENV["LINK_START_PAGE"]
+    config.x.test_message = ENV["TEST_MESSAGE"]
   end
 end

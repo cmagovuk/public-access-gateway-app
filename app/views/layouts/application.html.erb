@@ -64,11 +64,10 @@
     <%= yield(:back_link) %>
     <main class="govuk-main-wrapper" id="main-content" role="main">
 
-      <% if !ENV["TEST_BANNER"].blank? %>
-        <%= t("wizard.test_banner_html") %>
-      <% end %>
+      <%= render 'layouts/test_message' if test_message.present? %>
 
       <%= yield %>
+      
     </main>
     </div>
 
