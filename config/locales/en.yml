@@ -163,7 +163,7 @@ en:
     related_investigation:
       page_title: Which investigation are you telling us about? 
       body_html: |
-        <p class="govuk-body">If you don't know the name of the investigation, use the <a href="http://ds-cma-prototype.azurewebsites.net/cpg/cpg3c/case-finder" target="_blank">CMA case finder (opens in a new tab)</a>.</p>
+        <p class="govuk-body">If you don't know the name of the investigation, use the <a href="http://www.gov.uk/cma-cases" target="_blank">CMA case finder (opens in a new tab)</a>.</p>
       caption: Name of CMA investigation (optional)
       hint_html: 
     contact:
