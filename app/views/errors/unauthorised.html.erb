@@ -1,0 +1,15 @@
+
+<h1 class="govuk-heading-xl">Unauthorised</h1>
+
+<% if params["debug"].present? %>
+    <table class="govuk-table">
+    <% request.headers.each do |key, value| 
+        if key.downcase.starts_with?('http') %>
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><code><%= key %></code></td>
+        <td class="govuk-table__cell"><code><%= value %></code></td>
+    </tr>
+    <% end %>
+    <% end %>
+    </table>
+<% end %>

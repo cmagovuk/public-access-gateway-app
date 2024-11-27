@@ -1,0 +1,129 @@
+<%= render "breadcrumbs" %>
+
+<h1 class='govuk-heading-xl govuk-!-margin-top-7'><%= t(".page_title") %></h1>
+  
+<%= t(".guidance_html") %>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <dl class="govuk-summary-list">
+
+      <% if @auth_user.has_permission?(:destination_read) && @auth_user.has_permission?(:request_read) %>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t(".cases") %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= t(".cases_hint") %>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <%= link_to t(".view"), "/cases"  %>
+          </dd>
+        </div>
+      <% end %>
+
+      <% if @auth_user.has_permission?(:request_read) %>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t(".requests") %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= t(".requests_hint") %>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <%= link_to t(".view"), "/requests"  %>
+          </dd>
+        </div>
+      <% end %>
+
+      <% if @auth_user.has_permission?(:response_read) && 1==2 %>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t(".responses") %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= t(".responses_hint") %>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <%= link_to t(".view"), "/responses"  %>
+          </dd>
+        </div>
+      <% end %>
+
+      <% if @auth_user.has_permission?(:destination_read) %>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t(".destinations") %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= t(".destinations_hint") %>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <%= link_to t(".view"), "/destinations"  %>
+          </dd>
+        </div>
+      <% end %>
+
+      <% if @auth_user.has_permission?(:template_manage) %>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t(".templates") %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= t(".templates_hint") %>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <%= link_to t(".view"), "/templates"  %>
+          </dd>
+        </div>
+      <% end %>
+
+      <% if @auth_user.has_permission?(:user_read) %>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t(".users") %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= t(".users_hint") %>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <%= link_to t(".view"), "/users"  %>
+          </dd>
+        </div>
+      <% end %>
+
+      <% if @auth_user.has_permission?(:role_read) %>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t(".roles") %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= t(".roles_hint") %>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <%= link_to t(".view"), "/roles"  %>
+          </dd>
+        </div>
+      <% end %>
+
+      <% if @auth_user.has_permission?(:system) %>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <%= t(".system") %>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <%= t(".system_hint") %>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <%= link_to t(".view"), "/system"  %>
+          </dd>
+        </div>
+      <% end %>
+
+    </dl>
+    
+
+  </div>
+</div>

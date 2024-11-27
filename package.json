@@ -1,16 +1,17 @@
 {
-  "engines": {
-    "node": "14.x"
-  },
+  "name": "app",
   "dependencies": {
-    "@rails/webpacker": "^5.4.0",
-    "govuk-frontend": "^3.14.0",
-    "rails-ujs": "^5.2.6",
-    "serialize-javascript": "^5.0.1",
-    "set-value": "^4.0.0"
+    "esbuild": "^0.20.2",
+    "govuk-frontend": "5.2.0",
+    "sass": "^1.75.0"
   },
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules --quiet-deps",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
+  },
+  "packageManager": "yarn@4.1.1",
   "devDependencies": {
-    "webpack-dev-server": "^3.11.2"
-  },
-  "license": "MIT"
+    "@prettier/plugin-ruby": "^4.0.4",
+    "prettier": "^3.2.5"
+  }
 }

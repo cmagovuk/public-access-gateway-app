@@ -1,84 +1,92 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby File.read(".ruby-version").chomp
+ruby "3.2.2"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails", "~> 6.1.4"
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "rails", "~> 7.0.8", ">= 7.0.8.1"
+
+# The modern asset pipeline for Rails [https://github.com/rails/propshaft]
+gem "propshaft"
 
 # Use postgresql as the database for Active Record
-gem "pg", ">= 0.18", "< 2.0"
+gem "pg", "~> 1.1"
 
-# Use Puma as the app server
-gem "puma", "~> 5.3"
+# Use the Puma web server [https://github.com/puma/puma]
+gem "puma", "~> 5.0"
 
-# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
-gem "webpacker"
+# Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
+gem "jsbundling-rails"
 
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+# Bundle and process CSS [https://github.com/rails/cssbundling-rails]
+gem "cssbundling-rails"
+
+# Use Redis adapter to run Action Cable in production
+# gem "redis", "~> 4.0"
+
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem "bootsnap", ">= 1.1.0", require: false
+gem "bootsnap", require: false
 
-# Manage multiple processes i.e. web server and webpack
-gem "foreman"
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# gem "image_processing", "~> 1.2"
 
-# Canonical meta tag
-gem "canonical-rails"
+gem "azure-storage-blob", require: false
 
-# GOV.UK form builder
-gem "govuk_design_system_formbuilder"
+# Amoeba replicator
+gem "amoeba"
+
+gem "date_validator"
+gem "jwt"
+
+# Redcarpet markdown processor
+gem "redcarpet"
 
 # Ruby client for GOV.UK Notifications API
 gem "notifications-ruby-client"
 
-# Azure storage
-gem "azure-storage-blob", require: false
-
-# HTTP client
-gem "faraday"
-
-# Scheduling
-gem "rufus-scheduler"
-
-# PDF Generation
-gem "prawn"
-
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem "byebug", platforms: %i[mri mingw x64_mingw]
-
-  # GOV.UK interpretation of rubocop for linting Ruby
-  gem "rubocop-govuk"
-  gem "scss_lint-govuk"
-
-  # Debugging
-  gem "pry-byebug"
-
-  # Testing framework
-  gem "rspec-rails", "~> 5.0.1"
-  # Adds support for Capybara system testing and selenium driver
-  gem "capybara", "~> 3.35"
-
-  gem "dotenv-rails"
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem "listen", ">= 3.0.5", "< 3.6"
-  gem "web-console", ">= 3.3.0"
+  gem 'annotate', require: false
+  gem 'prettier_print', require: false
+  gem 'rubocop-govuk', require: false
+  gem 'solargraph', require: false
+  gem 'solargraph-rails', require: false
+  gem 'syntax_tree', require: false
+  gem 'syntax_tree-haml', require: false
+  gem 'syntax_tree-rbs', require: false
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
 
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem "spring"
-  gem "spring-watcher-listen", "~> 2.0.0"
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
 end
 
 group :test do
-  gem "rails-controller-testing"
-  gem "shoulda-matchers"
-  gem "webdrivers", "~> 4.6"
-end
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
+end
+gem "govuk-components"
+gem "govuk_design_system_formbuilder"
+
+group :test, :development do
+  gem "rspec"
+  gem "rspec-rails"
+end

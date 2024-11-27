@@ -1,0 +1,57 @@
+<%= render "breadcrumbs" %>
+
+<h1 class = "govuk-heading-xl govuk-!-margin-top-7"><%= t(".tokens") %></h1>
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h2 class = "govuk-heading-m"><%= t(".identity") %></h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                <%= t(".name") %>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                <%= @auth_user.name %>
+                </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                <%= t(".email_address") %>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                <%= @auth_user.email_address %>
+                </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                <%= t(".id") %>
+                </dt>
+                <dd class="govuk-summary-list__value">
+                <%= @auth_user.id %>
+                </dd>
+            </div>
+
+        </dl>
+
+        <h2 class = "govuk-heading-m"><%= t(".headers") %></h2>
+        
+        <table class="govuk-table">
+          <% request.headers.each do |key, value| 
+                if key.downcase.starts_with?('http') %>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><code><%= key %></code></td>
+                <td class="govuk-table__cell"><code><%= value %></code></td>
+            </tr>
+            <% end %>
+          <% end %>
+        </table>
+
+    </div>
+  </div>
+</div>

@@ -1,19 +1,12 @@
 class ApplicationController < ActionController::Base
-  before_action :scheduled_maintenance
-  before_action :set_headers
-
-  default_form_builder GOVUKDesignSystemFormBuilder::FormBuilder
-
-  def maintenance_text
-    @maintenance_text ||= Rails.application.config.x.maintenance_text
-  end
-
+  
+  default_form_builder(GOVUKDesignSystemFormBuilder::FormBuilder)
+  
   helper_method :maintenance_text
 
   def set_headers
     response.set_header("X-Robots-Tag", "index, nofollow")
   end
-
 private
 
   def scheduled_maintenance
