@@ -7,11 +7,11 @@ require "active_job/railtie"
 require "active_record/railtie"
 require "active_storage/engine"
 require "action_controller/railtie"
-# require "action_mailer/railtie"
-# require "action_mailbox/engine"
-# require "action_text/engine"
+#require "action_mailer/railtie"
+#require "action_mailbox/engine"
+#require "action_text/engine"
 require "action_view/railtie"
-# require "action_cable/engine"
+require "action_cable/engine"
 require "rails/test_unit/railtie"
 require "ostruct"
 
@@ -32,9 +32,11 @@ module RfiManagementInterface
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    # config.exceptions_app = routes
+
     config.assets.paths << Rails.root.join('node_modules/govuk-frontend/dist/govuk/assets')
 
-    config.exceptions_app = routes
+    
 
     # Load Govuk template set from "config/govuk_notify_templates.yml"
     config.govuk_notify_templates = config_for(

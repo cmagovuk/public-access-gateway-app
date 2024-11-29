@@ -1,13 +1,3 @@
-
-# development environment variables
-export RFI_DEV_DB_SERVER="rfi_development"
-export RFI_DEV_DB_USERNAME="dbadmin"
-export RFI_DEV_DB_PASSWORD="password"
-
-export RFI_TEST_DB_SERVER="rfi_development"
-export RFI_TEST_DB_USERNAME="dbadmin"
-export RFI_TEST_DB_PASSWORD="password"
-
 # start rails
 # bin/dev
 
