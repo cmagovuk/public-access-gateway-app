@@ -40,7 +40,14 @@
     <% end %>
 
     <div class="govuk-width-container">
-
+      <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content">
+          <strong class="govuk-tag govuk-phase-banner__content__tag ">Beta</strong>
+          <span class="govuk-phase-banner__text">
+            <%= t(".phase_text_html", feedback_link: feedback_link("feedback")) %>
+          </span>
+        </p>
+      </div>
       <%= yield(:back_link) %>
       
       <main class="govuk-main-wrapper" id="main-content" role="main">
