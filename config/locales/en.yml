@@ -277,7 +277,7 @@ en:
     whistleblowing:
       page_title: You cannot use this service to raise a concern about your employer
       body_html: |
-        <p class="govuk-body">To report your current or previous employer's possible involvement in anti-competitive or unfair trading practices (known as whistleblowing), email <a href="mailto:whistleblower@cma.gov.uk">whistleblower@cma.gov.uk</a>.</p>
+        <p class="govuk-body">To report your current or previous employer's possible involvement in anti-competitive or unfair trading practices (known as whistleblowing), use our <a href="https://www.gov.uk/guidance/make-a-whistleblower-report" target="_blank">Make a whistleblower report (opens in a new tab)</a> service.</p>
         <p class="govuk-body">Whistleblowers are employees, or former employees, that report suspected illegal activities or suspicious behaviour carried out by the organisation they're currently or have previously been employed by.</p>
         <p class="govuk-body">Find out more about what it means to be a whistleblower, including your rights and how the CMA will protect your identity on our <a href="https://www.gov.uk/government/publications/whistleblowers-at-the-cma" target="_blank">whistleblowing guidance page (opens in a new tab)</a>.</p>
     print:
@@ -320,7 +320,43 @@ en:
     error:
       page_title: A problem has occurred
       body_html: <p class="govuk-body">Something unexpected has happened.</p>
-
+  resubmit:
+    view:
+      resubmit: Re-Submit Submission
+      page_title: Submission %{refno}
+      summary_html: <p class="govuk-body">Print a copy of your submission.</p>
+      classification: What are you reporting to the CMA?
+      businesses: Tell us about the businesses involved
+      what_happened: Tell us what happened
+      additional_information: Additional information
+      nation: Where in the UK are you reporting from?
+      nation_options:
+        england: England
+        scotland: Scotland
+        ni: Northern Ireland
+        wales: Wales
+        unknown: I'd rather not say
+        notuk: Outside of the UK
+      evidence: Upload supporting evidence
+      no_evidence_uploaded: No evidence uploaded
+      contact: Contact information
+      no_contact_info: No contact information provided.
+      no_email_address: If you do not provide an email address, you will not receive email confirmation of your submission.
+      contact_first_name: First name
+      contact_last_name: Last name
+      contact_email: Email address
+      contact_telephone: Telephone number
+      related_investigation: Which investigation are you telling us about?
+      related_reference_number: What is the refererence number of your previous report? 
+      classification_options:
+        business: A problem with a business
+        sector: An issue in a sector of the UK economy
+        cartels: Businesses agreeing not to compete with each other
+        ongoing: Information or evidence related to an ongoing CMA investigation
+        whistleblowing: Suspicious behaviour by a business I work with, or worked with (whistleblowing)
+        more: An issue I've already submitted to you
+        other: More information about an issue I've already told you about
+      not_provided: Not provided
   helpers:
     legend:
       submission:

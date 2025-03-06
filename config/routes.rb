@@ -85,4 +85,10 @@ Rails.application.routes.draw do
   
   get "/404", to: "errors#not_found", via: :all
 
+  #get "/resubmit/list", to: "resubmit#list", via: :all
+  #get "/resubmit/view", to: "resubmit#view", via: :all
+  #post "/resubmit/submit", to: "resubmit#submit", via: :all
+
+  get "/view/submission", to: "view#submission", via: :all
+
 end

@@ -1,0 +1,22 @@
+<h1 class="govuk-heading-xl">Last 100 Submissions</h1>
+
+<table class="govuk-table">
+<thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header">Reference Number</th>
+    <th scope="col" class="govuk-table__header">Status</th>
+    <th scope="col" class="govuk-table__header">Created</th>
+    <th scope="col" class="govuk-table__header">&nbsp;</th>
+  </tr>
+</thead>
+<tbody>
+  <% @submissions.each do |s| %>
+    <tr class="govuk-table__row">
+        <td scope="col" class="table__cell"><%= s.referencenumber %></td>
+        <td scope="col" class="table__cell"><%= s.status %></td>
+        <td scope="col" class="table__cell"><%= s.updated_at %></td>
+        <td scope="col" class="table__cell"><a href="/resubmit/view?id=<%= s.id %>" target="_blank">View</a></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>

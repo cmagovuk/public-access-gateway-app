@@ -1,0 +1,172 @@
+<% title(t('.page_title', refno: @submission.referencenumber)) %>
+
+<h1 class="govuk-heading-xl"><%= t(".page_title", refno: @submission.referencenumber ) %></h1>
+
+<h2 class="govuk-heading-l"><%= @submission.status %></h2>
+
+<%= form_for @submission, url: "/resubmit/submit", method: :post do |f| %>
+    <%= f.hidden_field :id, :value => @submission.id %>
+    <%= f.govuk_submit t('.resubmit') %>
+<% end %>
+
+<% if Router.Contains(@submission.classification.to_sym,:classify) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.classification') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= t(".classification_options." + @submission.classification.downcase.to_s) %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+<% if Router.Contains(@submission.classification.to_sym,:related_reference_number) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.related_reference_number') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= @submission.relatedreferencenumber %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+<% if Router.Contains(@submission.classification.to_sym,:related_investigation) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.related_investigation') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= @submission.relatedinvestigation %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+<% if Router.Contains(@submission.classification.to_sym,:businesses) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.businesses') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% @submission.businesses.each do |business| %>    
+                    <%= business.name %>
+                    <%= !business.street.blank?     ? raw("<br />") + business.street : nil %>
+                    <%= !business.townorcity.blank? ? raw("<br />") + business.townorcity : nil %>
+                    <%= !business.county.blank?     ? raw("<br />") + business.county : nil %>
+                    <%= !business.postcode.blank?   ? raw("<br />") + business.postcode : nil %>
+                    <%= !business.url.blank?        ? raw("<br />") + business.url : nil %>
+                    <%= raw("<br />") %>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+
+<% if Router.Contains(@submission.classification.to_sym,:what_happened) %>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.what_happened') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= simple_format(@submission.description) %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+
+
+
+
+<% if Router.Contains(@submission.classification.to_sym,:evidence) %>
+    
+    <h2 class="govuk-heading-l"><%= t('.evidence') %></h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">&nbsp;</dt>
+            <dd class="govuk-summary-list__value">
+                <% if !@submission.evidencefiles.blank? %>
+                    <% @submission.evidencefiles.each do |evidence_file| %>
+                        <%= evidence_file.filename %><br />
+                    <% end %>
+                <% else %>
+                    <%= t(".no_evidence_uploaded") %>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+<% end %>
+
+
+<% if Router.Contains(@submission.classification.to_sym,:contact) %>
+    
+    <h2 class="govuk-heading-l"><%= t('.contact') %></h2>
+    
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.contact_first_name') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% if (!@submission.contactfirstname.blank?) %>
+                    <%= @submission.contactfirstname %>
+                <% else %>
+                    <%= t(".not_provided") %>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+    
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.contact_last_name') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% if (!@submission.contactlastname.blank?) %>
+                    <%= @submission.contactlastname %>
+                <% else %>
+                    <%= t(".not_provided") %>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.contact_email') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% if (!@submission.contactemail.blank?) %>
+                    <%= @submission.contactemail %>
+                <% else %>
+                    <%= t(".not_provided") %>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+    
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.contact_telephone') %></dt>
+            <dd class="govuk-summary-list__value">
+                <% if (!@submission.contacttelephone.blank?) %>
+                    <%= @submission.contacttelephone %>
+                <% else %>
+                    <%= t(".not_provided") %>
+                <% end %>
+            </dd>
+        </div>
+    </dl>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key"><%= t('.nation') %></dt>
+            <dd class="govuk-summary-list__value">
+                <%= t(".nation_options." + @submission.nation.to_s) %>
+            </dd>
+        </div>
+    </dl>
+
+
+<% end %>
+
+<%= form_for @submission, url: "/resubmit/submit", method: :post do |f| %>
+    <%= f.hidden_field :id, :value => @submission.id %>
+    <%= f.govuk_submit t('.resubmit') %>
+<% end %>
